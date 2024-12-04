@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Security Dashboard</title>
+    <link rel="stylesheet" href="farm.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            background: #0f1112;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* Header */
+        header {
+            background: #1e4820;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        /* Dashboard Layout */
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem auto;
+            padding: 1rem;
+            max-width: 1200px;
+        }
+
+        /* Card Design */
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .card iframe {
+            border-radius: 8px;
+            width: 100%;
+            max-width: 450px;
+            height: 260px;
+            border: 1px solid #cccccc;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #4caf50;
+            color: #fff;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+
+            .card iframe {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Farm Security IoT Dashboard</h1>
+    </header>
+    <main>
+        <section class="dashboard">
+            <div class="card">
+                <h2>Smoke Sensor</h2>
+                <iframe src="https://thingspeak.com/channels/2772164/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+            </div>
+            <div class="card">
+                <h2>Ultrasonic Sensor</h2>
+                <iframe src="https://thingspeak.com/channels/2772164/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+            </div>
+            <div class="card">
+                <h2>Soil Moisture</h2>
+                <iframe src="https://thingspeak.com/channels/2772164/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Farm Security. All rights reserved.</p>
+    </footer>
+</body>
+</html>
